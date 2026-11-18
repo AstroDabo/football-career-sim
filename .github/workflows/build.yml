@@ -20,6 +20,9 @@ jobs:
       - name: Install dependencies
         working-directory: football-career-sim
         run: npm install
+      - name: Install missing Expo package
+        working-directory: football-career-sim
+        run: npx expo install expo-asset
       - name: Generate Android project
         working-directory: football-career-sim
         run: npx expo prebuild --platform android
