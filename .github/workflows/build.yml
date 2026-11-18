@@ -26,6 +26,9 @@ jobs:
       - name: Generate Android project
         working-directory: football-career-sim
         run: npx expo prebuild --platform android
+      - name: Set Kotlin version
+        working-directory: football-career-sim/android
+        run: echo "android.kotlinVersion=1.9.25" >> gradle.properties
       - name: Build APK
         working-directory: football-career-sim/android
         run: ./gradlew assembleRelease
